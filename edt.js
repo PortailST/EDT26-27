@@ -4,7 +4,7 @@
    Fichier autonome (GitHub Pages). Côté KSUP : un conteneur + ce script.
 
        <div id="edt-portail-st"></div>
-       <script src="https://portailst.github.io/EDT26-27/edt.js?v=10"></script>
+       <script src="https://portailst.github.io/EDT26-27/edt.js?v=11"></script>
 
    Données structurées { time, cours, salle }, triées par horaire à
    l'affichage. Tout le visuel (styles, interface) est généré ici.
@@ -1426,8 +1426,7 @@
 
   // --- Styles (scopés + défensifs face au CSS de KSUP) ---------------------
 
-  function injecterStyles() {
-    if (document.getElementById("edt-styles")) return;
+  function construireCSS() {
     var P = "#edt-portail-st";
     var chevron = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235C7682' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E\")";
     var css =
@@ -1490,10 +1489,7 @@
       P + " .edt-empty{text-align:center;padding:34px 16px;color:var(--muted);font-weight:600;}" +
       "@media (min-width:640px){" + P + " .edt-title{font-size:34px;}" + P + " .edt-card{padding:16px 18px;gap:16px;}" + P + " .edt-time{flex-basis:62px;}" + P + " .edt-stage{padding:20px;}}" +
       "@media (prefers-reduced-motion:reduce){" + P + " .edt-content,#edt-portail-st .edt-chip,#edt-portail-st .edt-ribbon{transition:none!important;scroll-behavior:auto!important;}}";
-    var s = document.createElement("style");
-    s.id = "edt-styles";
-    s.textContent = css;
-    document.head.appendChild(s);
+    return css;
   }
 
   // --- Interface -----------------------------------------------------------
@@ -1501,7 +1497,7 @@
   var FLECHE_G = '<svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>';
   var FLECHE_D = '<svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>';
 
-  var root, selectEl, ribbonEl, contentEl;
+  var root, mount, selectEl, ribbonEl, contentEl;
   var currentGroup, currentIndex = 0, t1 = null, t2 = null;
   var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -1509,13 +1505,13 @@
     root = document.getElementById("edt-portail-st");
     if (!root || root.getAttribute("data-edt-ready") === "1") return;
     root.setAttribute("data-edt-ready", "1");
-    injecterStyles();
 
+    var css = construireCSS();
     var options = Object.keys(DATA).map(function (k) {
       return '<option value="' + k + '">' + libelle(k) + "</option>";
     }).join("");
 
-    root.innerHTML =
+    var markup =
       '<div class="edt-eyebrow">Pré-rentrée</div>' +
       '<div class="edt-title" role="heading" aria-level="2">' + TITRE + "</div>" +
       '<div class="edt-sub">' + SOUSTITRE + "</div>" +
@@ -1528,13 +1524,33 @@
       "</div>" +
       '<div class="edt-stage"><div class="edt-content" aria-live="polite"></div></div>';
 
-    selectEl = root.querySelector(".edt-select");
-    ribbonEl = root.querySelector(".edt-ribbon");
-    contentEl = root.querySelector(".edt-content");
+    // Isolation totale via Shadow DOM : le CSS du site KSUP ne peut plus
+    // entrer dans le widget. Repli en DOM classique si non supporté.
+    var useShadow = false;
+    try { if (root.attachShadow) { mount = root.attachShadow({ mode: "open" }); useShadow = true; } }
+    catch (e) { useShadow = false; }
+
+    if (useShadow) {
+      var shadowCss = css.replace(/#edt-portail-st /g, "").replace(/#edt-portail-st/g, ":host");
+      mount.innerHTML = "<style>" + shadowCss + "</style>" + markup;
+    } else {
+      mount = root;
+      if (!document.getElementById("edt-styles")) {
+        var st = document.createElement("style");
+        st.id = "edt-styles";
+        st.textContent = css;
+        document.head.appendChild(st);
+      }
+      root.innerHTML = markup;
+    }
+
+    selectEl = mount.querySelector(".edt-select");
+    ribbonEl = mount.querySelector(".edt-ribbon");
+    contentEl = mount.querySelector(".edt-content");
 
     selectEl.addEventListener("change", changerGroupe);
-    root.querySelector(".edt-prev").addEventListener("click", function () { goTo(currentIndex - 1); });
-    root.querySelector(".edt-next").addEventListener("click", function () { goTo(currentIndex + 1); });
+    mount.querySelector(".edt-prev").addEventListener("click", function () { goTo(currentIndex - 1); });
+    mount.querySelector(".edt-next").addEventListener("click", function () { goTo(currentIndex + 1); });
 
     currentGroup = selectEl.value;
     demarrerGroupe();

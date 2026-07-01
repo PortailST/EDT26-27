@@ -3,20 +3,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aperçu - Emploi du temps Portail SITE</title>
+  <title>Emploi du temps — Portail SITE</title>
+  <style>
+    html, body { margin: 0; background: transparent; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .edt-note { max-width: 880px; margin: 8px auto 24px; padding: 0 16px; font-size: 14px; color: #5C7682; }
+    .edt-note a { color: #007BA3; }
+  </style>
 </head>
-<body style="font-family: Arial, Helvetica, sans-serif; background:#fafafa; margin:0; padding:20px;">
+<body>
 
-  <!-- Conteneur : tout est généré par edt.js -->
+  <!-- Le widget se construit ici (tout est généré par edt.js) -->
   <div id="edt-portail-st"></div>
 
-  <p style="max-width:800px; margin:20px auto; font-size:15px; color:#555;">
+  <p class="edt-note">
     <em>*Cet emploi du temps est mis à disposition pour t'aider à t'organiser.
     Utilise en priorité l'emploi du temps disponible sur ton espace
     <a href="https://portail-lms.univ-cotedazur.fr/course/9a3ec3be-f434-11ef-8abe-005056953f80">Moodle</a>.</em>
   </p>
 
-  <!-- chemin relatif : marche sur GitHub Pages comme en local -->
-  <script src="edt.js?v=10"></script>
+  <script src="edt.js?v=11"></script>
+
+  <!-- Si la page est intégrée en iframe : on transmet la hauteur au parent
+       pour permettre un redimensionnement automatique (optionnel côté KSUP). -->
+  <script>
+    (function () {
+      function envoyerHauteur() {
+        var h = document.documentElement.scrollHeight;
+        if (window.parent && window.parent !== window) {
+          window.parent.postMessage({ edtHeight: h }, "*");
+        }
+      }
+      window.addEventListener("load", envoyerHauteur);
+      window.addEventListener("resize", envoyerHauteur);
+      if (window.MutationObserver) {
+        new MutationObserver(envoyerHauteur).observe(
+          document.getElementById("edt-portail-st"),
+          { childList: true, subtree: true }
+        );
+      }
+      setInterval(envoyerHauteur, 1000);
+    })();
+  </script>
 </body>
 </html>
