@@ -4,7 +4,7 @@
    Fichier autonome (GitHub Pages). Côté KSUP : un conteneur + ce script.
 
        <div id="edt-portail-st"></div>
-       <script src="https://portailst.github.io/EDT26-27/edt.js?v=9"></script>
+       <script src="https://portailst.github.io/EDT26-27/edt.js?v=10"></script>
 
    Données structurées { time, cours, salle }, triées par horaire à
    l'affichage. Tout le visuel (styles, interface) est généré ici.
@@ -1413,7 +1413,6 @@
     return "rgba(" + ((n >> 16) & 255) + "," + ((n >> 8) & 255) + "," + (n & 255) + "," + a + ")";
   }
 
-  // "8h00-10h00" -> { start:"08h00", end:"10h00" } ; sinon { moodle:true }
   function decoupeHoraire(t) {
     var m = t.match(/(\d{1,2})h(\d{2})/g);
     if (!m) return { moodle: true };
@@ -1425,55 +1424,72 @@
   function jourCourt(d) { return JOURS_COURTS[d] || d.slice(0, 3); }
   function numJour(date) { var m = date.match(/\d+/); return m ? m[0] : date; }
 
-  // --- Styles --------------------------------------------------------------
+  // --- Styles (scopés + défensifs face au CSS de KSUP) ---------------------
 
   function injecterStyles() {
     if (document.getElementById("edt-styles")) return;
+    var P = "#edt-portail-st";
     var chevron = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235C7682' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E\")";
     var css =
-      "#edt-portail-st{--ink:#0B2B36;--muted:#5C7682;--primary:#007BA3;--bright:#0095C8;--canvas:#F2F6F8;--surface:#fff;--line:#E2EAEE;max-width:880px;margin:24px auto;padding:0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;box-sizing:border-box;}" +
-      "#edt-portail-st *{box-sizing:border-box;}" +
-      "#edt-portail-st .edt-eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);font-weight:700;margin:0 0 6px;}" +
-      "#edt-portail-st .edt-title{font-size:30px;line-height:1.08;font-weight:800;margin:0 0 6px;letter-spacing:-.015em;}" +
-      "#edt-portail-st .edt-sub{font-size:15px;color:var(--muted);margin:0 0 22px;}" +
-      "#edt-portail-st .edt-label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin:0 0 6px;}" +
-      "#edt-portail-st .edt-select{appearance:none;-webkit-appearance:none;width:100%;max-width:340px;font-size:16px;font-weight:600;color:var(--ink);background-color:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:12px 40px 12px 14px;cursor:pointer;background-image:" + chevron + ";background-repeat:no-repeat;background-position:right 14px center;margin:0 0 20px;}" +
-      "#edt-portail-st .edt-select:focus-visible{outline:none;border-color:var(--bright);box-shadow:0 0 0 3px rgba(0,149,200,.18);}" +
-      "#edt-portail-st .edt-daynav{display:flex;align-items:center;gap:8px;margin:0 0 16px;}" +
-      "#edt-portail-st .edt-navbtn{flex:0 0 auto;width:38px;height:38px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);color:var(--primary);cursor:pointer;display:flex;align-items:center;justify-content:center;}" +
-      "#edt-portail-st .edt-navbtn:hover{background:var(--canvas);}" +
-      "#edt-portail-st .edt-navbtn:focus-visible{outline:none;border-color:var(--bright);box-shadow:0 0 0 3px rgba(0,149,200,.18);}" +
-      "#edt-portail-st .edt-navbtn svg{width:18px;height:18px;fill:currentColor;}" +
-      "#edt-portail-st .edt-ribbon{display:flex;gap:8px;overflow-x:auto;scroll-behavior:smooth;padding:4px 2px;-ms-overflow-style:none;scrollbar-width:none;}" +
-      "#edt-portail-st .edt-ribbon::-webkit-scrollbar{display:none;}" +
-      "#edt-portail-st .edt-gap{flex:0 0 1px;align-self:stretch;background:var(--line);margin:8px 7px;}" +
-      "#edt-portail-st .edt-chip{flex:0 0 auto;min-width:52px;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 11px;border-radius:13px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;color:var(--ink);transition:background .12s,border-color .12s,box-shadow .12s;}" +
-      "#edt-portail-st .edt-chip:hover{border-color:var(--bright);background:var(--canvas);}" +
-      "#edt-portail-st .edt-chip:focus-visible{outline:none;border-color:var(--bright);box-shadow:0 0 0 3px rgba(0,149,200,.18);}" +
-      "#edt-portail-st .edt-chip-day{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700;}" +
-      "#edt-portail-st .edt-chip-num{font-size:18px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;}" +
-      "#edt-portail-st .edt-chip.active{background:linear-gradient(180deg,#0095C8,#007BA3);border-color:transparent;color:#fff;box-shadow:0 6px 16px rgba(0,123,163,.28);}" +
-      "#edt-portail-st .edt-chip.active .edt-chip-day{color:rgba(255,255,255,.85);}" +
-      "#edt-portail-st .edt-stage{background:var(--canvas);border:1px solid var(--line);border-radius:18px;padding:16px;overflow:hidden;}" +
-      "#edt-portail-st .edt-content{will-change:opacity,transform;}" +
-      "#edt-portail-st .edt-dayhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:2px 2px 14px;}" +
-      "#edt-portail-st .edt-daytitle{font-size:19px;font-weight:800;margin:0;letter-spacing:-.01em;}" +
-      "#edt-portail-st .edt-daycount{font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap;}" +
-      "#edt-portail-st .edt-card{display:flex;gap:14px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:14px;padding:14px 16px;margin:10px 0;box-shadow:0 1px 2px rgba(11,43,54,.04);}" +
-      "#edt-portail-st .edt-card:first-child{margin-top:0;}" +
-      "#edt-portail-st .edt-card:last-child{margin-bottom:0;}" +
-      "#edt-portail-st .edt-time{flex:0 0 56px;display:flex;flex-direction:column;align-items:flex-start;padding-top:1px;}" +
-      "#edt-portail-st .edt-time-start{font-size:16px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--ink);}" +
-      "#edt-portail-st .edt-time-end{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--muted);}" +
-      "#edt-portail-st .edt-time-moodle{font-size:11px;font-weight:800;color:var(--c);text-transform:uppercase;letter-spacing:.04em;line-height:1.3;}" +
-      "#edt-portail-st .edt-info{flex:1 1 auto;min-width:0;}" +
-      "#edt-portail-st .edt-tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--c);background:var(--c-soft);padding:3px 9px;border-radius:999px;margin:0 0 8px;}" +
-      "#edt-portail-st .edt-course{font-size:16px;font-weight:700;line-height:1.3;margin:0 0 6px;color:var(--ink);}" +
-      "#edt-portail-st .edt-loc{display:flex;align-items:center;gap:5px;font-size:14px;color:var(--muted);margin:0;}" +
-      "#edt-portail-st .edt-pin{flex:0 0 auto;width:15px;height:15px;fill:var(--c);}" +
-      "#edt-portail-st .edt-empty{text-align:center;padding:34px 16px;color:var(--muted);font-weight:600;}" +
-      "@media (min-width:640px){#edt-portail-st .edt-title{font-size:34px;}#edt-portail-st .edt-card{padding:16px 18px;gap:16px;}#edt-portail-st .edt-time{flex-basis:62px;}#edt-portail-st .edt-stage{padding:20px;}}" +
-      "@media (prefers-reduced-motion:reduce){#edt-portail-st .edt-content,#edt-portail-st .edt-chip,#edt-portail-st .edt-ribbon{transition:none!important;scroll-behavior:auto!important;}}";
+      // Conteneur racine : on neutralise ce que le thème pourrait imposer.
+      P + "{--ink:#0B2B36;--muted:#5C7682;--primary:#007BA3;--bright:#0095C8;--canvas:#F2F6F8;--surface:#fff;--line:#E2EAEE;" +
+        "display:block!important;float:none!important;position:static!important;width:auto!important;max-width:880px;margin:24px auto!important;padding:0 16px;" +
+        "font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.45;color:var(--ink);text-align:left;" +
+        "-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;box-sizing:border-box;}" +
+      // Reset local (le CSS KSUP ne doit rien casser à l'intérieur).
+      P + ",#edt-portail-st *,#edt-portail-st *::before,#edt-portail-st *::after{box-sizing:border-box;}" +
+      P + " div,#edt-portail-st p,#edt-portail-st span,#edt-portail-st label,#edt-portail-st button,#edt-portail-st select,#edt-portail-st svg,#edt-portail-st article{float:none;position:static;max-width:100%;}" +
+      P + " .edt-t,#edt-portail-st p,#edt-portail-st label{margin:0;padding:0;border:0;background:none;font:inherit;color:inherit;text-transform:none;letter-spacing:normal;}" +
+      P + " button{font:inherit;line-height:normal;margin:0;padding:0;border:0;background:none;text-transform:none;-webkit-appearance:none;appearance:none;cursor:pointer;-webkit-tap-highlight-color:transparent;}" +
+      // En-tête
+      P + " .edt-eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);font-weight:700;margin:0 0 6px;}" +
+      P + " .edt-title{display:block;font-size:30px;line-height:1.08;font-weight:800;margin:0 0 6px;letter-spacing:-.015em;color:var(--ink);}" +
+      P + " .edt-sub{font-size:15px;color:var(--muted);margin:0 0 22px;}" +
+      P + " .edt-label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin:0 0 6px;}" +
+      // Sélecteur de groupe
+      P + " .edt-select{display:block!important;width:100%;max-width:340px;height:auto!important;min-height:0;font-size:16px;font-weight:600;color:var(--ink);" +
+        "background-color:var(--surface);background-image:" + chevron + ";background-repeat:no-repeat;background-position:right 14px center;" +
+        "border:1.5px solid var(--line);border-radius:12px;padding:12px 40px 12px 14px;margin:0 0 20px!important;line-height:1.3;vertical-align:baseline;" +
+        "-webkit-appearance:none;-moz-appearance:none;appearance:none;cursor:pointer;}" +
+      P + " .edt-select:focus-visible{outline:none;border-color:var(--bright);box-shadow:0 0 0 3px rgba(0,149,200,.18);}" +
+      // Barre de navigation jours
+      P + " .edt-daynav{display:flex!important;align-items:center;flex-wrap:nowrap;gap:8px;margin:0 0 16px;}" +
+      P + " .edt-navbtn{flex:0 0 38px!important;width:38px;height:38px;min-width:38px;border-radius:10px;border:1.5px solid var(--line)!important;background:var(--surface)!important;color:var(--primary);display:flex;align-items:center;justify-content:center;touch-action:manipulation;}" +
+      P + " .edt-navbtn:hover{background:var(--canvas)!important;}" +
+      P + " .edt-navbtn:focus-visible{outline:none;border-color:var(--bright)!important;box-shadow:0 0 0 3px rgba(0,149,200,.18);}" +
+      P + " .edt-navbtn svg{width:18px;height:18px;fill:currentColor;display:block;}" +
+      // Ruban (LE correctif : flex:1 + min-width:0 => rétrécit et défile au lieu de déborder)
+      P + " .edt-ribbon{flex:1 1 auto!important;min-width:0!important;display:flex;gap:8px;overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth;padding:4px 2px;-ms-overflow-style:none;scrollbar-width:none;-webkit-overflow-scrolling:touch;}" +
+      P + " .edt-ribbon::-webkit-scrollbar{display:none;height:0;}" +
+      P + " .edt-gap{flex:0 0 1px;align-self:stretch;background:var(--line);margin:8px 7px;}" +
+      P + " .edt-chip{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:50px;padding:8px 11px;border-radius:13px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);transition:background .12s,border-color .12s,box-shadow .12s;touch-action:manipulation;}" +
+      P + " .edt-chip:hover{border-color:var(--bright);background:var(--canvas);}" +
+      P + " .edt-chip:focus-visible{outline:none;border-color:var(--bright);box-shadow:0 0 0 3px rgba(0,149,200,.18);}" +
+      P + " .edt-chip-day{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700;}" +
+      P + " .edt-chip-num{font-size:18px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;color:inherit;}" +
+      P + " .edt-chip.active{background:linear-gradient(180deg,#0095C8,#007BA3);border-color:transparent;color:#fff;box-shadow:0 6px 16px rgba(0,123,163,.28);}" +
+      P + " .edt-chip.active .edt-chip-day{color:rgba(255,255,255,.85);}" +
+      // Scène + cartes
+      P + " .edt-stage{background:var(--canvas);border:1px solid var(--line);border-radius:18px;padding:16px;overflow:hidden;}" +
+      P + " .edt-content{will-change:opacity,transform;}" +
+      P + " .edt-dayhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:2px 2px 14px;}" +
+      P + " .edt-daytitle{display:block;font-size:19px;font-weight:800;margin:0;letter-spacing:-.01em;color:var(--ink);}" +
+      P + " .edt-daycount{font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap;flex:0 0 auto;}" +
+      P + " .edt-card{display:flex;gap:14px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:14px;padding:14px 16px;margin:10px 0;box-shadow:0 1px 2px rgba(11,43,54,.04);}" +
+      P + " .edt-card:first-child{margin-top:0;}" +
+      P + " .edt-card:last-child{margin-bottom:0;}" +
+      P + " .edt-time{flex:0 0 56px;display:flex;flex-direction:column;align-items:flex-start;padding-top:1px;}" +
+      P + " .edt-time-start{font-size:16px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--ink);}" +
+      P + " .edt-time-end{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--muted);}" +
+      P + " .edt-time-moodle{font-size:11px;font-weight:800;color:var(--c);text-transform:uppercase;letter-spacing:.04em;line-height:1.3;}" +
+      P + " .edt-info{flex:1 1 auto;min-width:0;}" +
+      P + " .edt-tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--c);background:var(--c-soft);padding:3px 9px;border-radius:999px;margin:0 0 8px;}" +
+      P + " .edt-course{display:block;font-size:16px;font-weight:700;line-height:1.3;margin:0 0 6px;color:var(--ink);overflow-wrap:anywhere;}" +
+      P + " .edt-loc{display:flex;align-items:center;gap:5px;font-size:14px;color:var(--muted);margin:0;overflow-wrap:anywhere;}" +
+      P + " .edt-pin{flex:0 0 auto;width:15px;height:15px;min-width:15px;fill:var(--c);display:inline-block;}" +
+      P + " .edt-empty{text-align:center;padding:34px 16px;color:var(--muted);font-weight:600;}" +
+      "@media (min-width:640px){" + P + " .edt-title{font-size:34px;}" + P + " .edt-card{padding:16px 18px;gap:16px;}" + P + " .edt-time{flex-basis:62px;}" + P + " .edt-stage{padding:20px;}}" +
+      "@media (prefers-reduced-motion:reduce){" + P + " .edt-content,#edt-portail-st .edt-chip,#edt-portail-st .edt-ribbon{transition:none!important;scroll-behavior:auto!important;}}";
     var s = document.createElement("style");
     s.id = "edt-styles";
     s.textContent = css;
@@ -1500,9 +1516,9 @@
     }).join("");
 
     root.innerHTML =
-      '<p class="edt-eyebrow">Pré-rentrée</p>' +
-      '<h1 class="edt-title">' + TITRE + "</h1>" +
-      '<p class="edt-sub">' + SOUSTITRE + "</p>" +
+      '<div class="edt-eyebrow">Pré-rentrée</div>' +
+      '<div class="edt-title" role="heading" aria-level="2">' + TITRE + "</div>" +
+      '<div class="edt-sub">' + SOUSTITRE + "</div>" +
       '<label class="edt-label" for="edt-grp">Mon groupe</label>' +
       '<select id="edt-grp" class="edt-select">' + options + "</select>" +
       '<div class="edt-daynav">' +
@@ -1523,8 +1539,6 @@
     currentGroup = selectEl.value;
     demarrerGroupe();
   }
-
-  // --- Construction du ruban de jours --------------------------------------
 
   function construireRuban() {
     var jours = DATA[currentGroup] || [];
@@ -1554,6 +1568,7 @@
       chips[i].setAttribute("aria-selected", on ? "true" : "false");
       if (on) {
         var off = chips[i].offsetLeft - (ribbonEl.clientWidth / 2) + (chips[i].clientWidth / 2);
+        if (off < 0) off = 0;
         if (ribbonEl.scrollTo) ribbonEl.scrollTo({ left: off, behavior: reduced ? "auto" : "smooth" });
         else ribbonEl.scrollLeft = off;
       }
@@ -1574,8 +1589,8 @@
              '<div class="edt-time">' + tHtml + "</div>" +
              '<div class="edt-info">' +
                '<span class="edt-tag">' + ty.label + "</span>" +
-               '<h3 class="edt-course">' + e.cours + "</h3>" +
-               '<p class="edt-loc">' + ICONE + "<span>" + e.salle + "</span></p>" +
+               '<div class="edt-course">' + e.cours + "</div>" +
+               '<div class="edt-loc">' + ICONE + "<span>" + e.salle + "</span></div>" +
              "</div>" +
            "</article>";
   }
@@ -1591,13 +1606,13 @@
     var evs = j.events.slice().sort(function (a, b) { return minutes(a.time) - minutes(b.time); });
     contentEl.innerHTML =
       '<div class="edt-dayhead">' +
-        '<h2 class="edt-daytitle">' + j.day + " " + j.date + "</h2>" +
+        '<div class="edt-daytitle" role="heading" aria-level="3">' + j.day + " " + j.date + "</div>" +
         '<span class="edt-daycount">' + n + " séance" + (n > 1 ? "s" : "") + "</span>" +
       "</div>" +
       evs.map(carte).join("");
   }
 
-  // --- Navigation (annulation d'animation = clics rapides sans désync) ------
+  // --- Navigation (clics rapides = relance propre, jamais de désync) --------
 
   function annulerAnim() {
     if (t1) { clearTimeout(t1); t1 = null; }
@@ -1630,8 +1645,6 @@
     }, 140);
   }
 
-  // Saut vers un jour quelconque. currentIndex fait foi : impossible de
-  // désynchroniser, et un clic en pleine animation relance proprement.
   function goTo(i) {
     var g = DATA[currentGroup];
     if (!g || !g.length) return;
