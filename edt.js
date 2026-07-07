@@ -4,7 +4,7 @@
    Fichier autonome (GitHub Pages). Côté KSUP : un conteneur + ce script.
 
        <div id="edt-portail-st"></div>
-       <script src="https://portailst.github.io/EDT26-27/edt.js?v=11"></script>
+       <script src="https://portailst.github.io/EDT26-27/edt.js?v=12"></script>
 
    Données structurées { time, cours, salle }, triées par horaire à
    l'affichage. Tout le visuel (styles, interface) est généré ici.
@@ -14,7 +14,7 @@
 
   // --- Textes d'en-tête ----------------------------------------------------
   var TITRE = "Emploi du temps";
-  var SOUSTITRE = "Semaines de pré-rentrée · du 1ᵉʳ au 12 septembre";
+  var SOUSTITRE = "Du 31 août au 11 septembre 2026";
 
   // --- Icône de localisation (SVG intégré, aucune image externe) -----------
   var ICONE = '<svg class="edt-pin" viewBox="0 0 24 24" aria-hidden="true">' +
@@ -46,1348 +46,1276 @@
 
   var DATA = {
     groupeST1: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail ST - OUI SI", salle: "AMPHI PHYSIQUE" },
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (OUI-SI)", salle: "Amphi Physique" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "14h00-15h00", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi PV" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Electronique & IA", salle: "AMPHI PV" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "14h00-15h00", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST2: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail ST - OUI SI", salle: "AMPHI PHYSIQUE" },
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (OUI-SI)", salle: "Amphi Physique" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.2 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "13h00-14h00", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.2 (Bât M)" },
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi PV" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Electronique & IA", salle: "AMPHI PV" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "13h00-14h00", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 1.2 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.2 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.2 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.2 (Bât M)" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.2 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.2 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST3: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail ST - OUI SI", salle: "AMPHI PHYSIQUE" },
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (OUI-SI)", salle: "Amphi Physique" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "11h15-12h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi PV" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Electronique & IA", salle: "AMPHI PV" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "13h00-14h00", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST4: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail ST - OUI SI", salle: "AMPHI PHYSIQUE" },
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (OUI-SI)", salle: "Amphi Physique" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "11h15-12h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi PV" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Electronique & IA", salle: "AMPHI PV" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "11h15-12h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST5: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail ST - OUI SI", salle: "AMPHI PHYSIQUE" },
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (OUI-SI)", salle: "Amphi Physique" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "13h00-14h00", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi PV" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Electronique & IA", salle: "AMPHI PV" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "13h00-14h00", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST6: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée DL Math-Info", salle: "Salle M 1.6 (Bât M)" },
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion DL", salle: "Salle M 1.6 (Bât M)" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 3.2 (Bât M)" },
-        { time: "15h15-16h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi PV" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Electronique & IA", salle: "AMPHI PV" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
+        { time: "15h15-16h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST7: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail ST - OUI SI", salle: "AMPHI PHYSIQUE" },
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (OUI-SI)", salle: "Amphi Physique" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "10h15-11h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi PV" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Electronique & IA", salle: "AMPHI PV" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "14h00-15h00", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST8: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail ST - OUI SI", salle: "AMPHI PHYSIQUE" },
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (OUI-SI)", salle: "Amphi Physique" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "10h15-11h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi PV" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Electronique & IA", salle: "AMPHI PV" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "14h00-15h00", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST9: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail ST - OUI SI", salle: "AMPHI PHYSIQUE" },
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (OUI-SI)", salle: "Amphi Physique" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
-        { time: "11h15-12h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
+        { time: "10h15-11h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi PV" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Electronique & IA", salle: "AMPHI PV" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST10: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail ST - OUI SI", salle: "AMPHI PHYSIQUE" },
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (OUI-SI)", salle: "Amphi Physique" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
-        { time: "11h15-12h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
+        { time: "11h15-12h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi PV" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Electronique & IA", salle: "AMPHI PV" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST11: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail ST - OUI SI", salle: "AMPHI PHYSIQUE" },
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (OUI-SI)", salle: "Amphi Physique" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 3.1 (Bât M)" },
-        { time: "11h15-12h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.1 (Bât M)" },
+        { time: "11h15-12h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.1 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi PV" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 3.1 (Bât M)" },
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Electronique & IA", salle: "AMPHI PV" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 3.1 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 3.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 3.1 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 3.1 (Bât M)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.1 (Bât M)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 3.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 3.1 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 3.1 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 3.1 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 3.1 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.1 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "8h00-17h15", cours: "Évaluation Maths0", salle: "Amphi PV" },
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST12: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée DL Math-Physique", salle: "Salle M 1.4 (Bât M)" },
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion DL", salle: "Salle M 1.4 (Bât M)" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 3.2 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "15h15-16h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.2 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi PV" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 3.2 (Bât M)" },
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Electronique & IA", salle: "AMPHI PV" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.2 (Bât M)" },
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "15h15-16h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 3.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.2 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 3.2 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 3.2 (Bât M)" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.2 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 3.2 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST13: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail ST - OUI SI", salle: "AMPHI PHYSIQUE" },
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (OUI-SI)", salle: "Amphi Physique" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 3.3 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "14h00-15h00", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.3 (Bât M)" },
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi PV" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 3.3 (Bât M)" },
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Electronique & IA", salle: "AMPHI PV" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.3 (Bât M)" },
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "10h15-11h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 3.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 3.3 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 3.2 (Bât M)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.3 (Bât M)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 3.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 3.3 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.3 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 3.2 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.3 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST14: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail ST - OUI SI", salle: "AMPHI PHYSIQUE" },
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (OUI-SI)", salle: "Amphi Physique" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 3.3 (Bât M)" },
-        { time: "10h15-11h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.4 (Bât M)" },
+        { time: "10h15-11h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.4 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi PV" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 3.4 (Bât M)" },
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Electronique & IA", salle: "AMPHI PV" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.4 (Bât M)" },
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 3.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 3.4 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 3.4 (Bât M)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 3.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 3.4 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.4 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 3.4 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST15: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée PPPE", salle: "Salle M 1.2 (Bât M)" },
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (OUI-SI)", salle: "Amphi Physique" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "10h15-11h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 3.2 (Bât M)" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.6 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.6 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi PV" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Electronique & IA", salle: "AMPHI PV" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.6 (Bât M)" },
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "11h15-12h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 3.4 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.6 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sc. Naturelles" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.6 (Bât M)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.6 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 3.2 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.6 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.6 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST16: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "9h00-11h15", cours: "Réunion de Pré-Rentrée Portail SV", salle: "AMPHI PV" },
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée DL Math-SV", salle: "AMPHI Sc. Naturelles" },
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "9h00-11h15", cours: "Réunion de rentrée (Portail SV)", salle: "Amphi PV" },
+        { time: "11h15-12h15", cours: "Réunion DL", salle: "Amphi Sc. Naturelles" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 3.2 (Bât M)" },
-        { time: "10h15-12h15", cours: "Présentation Licence Sciences de la Vie", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
+        { time: "10h15-12h15", cours: "Présentation des métiers Sciences de la Vie", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "10h15-11h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "10h15-11h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "10h15-11h15", cours: "Présentation Licence Chimie pour SV", salle: "AMPHI Sc. Naturelles" },
-        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "AMPHI Sc. Naturelles" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "10h15-11h15", cours: "Présentation Chimie pour SV", salle: "Amphi Sc. Naturelles" },
+        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "Amphi Sc. Naturelles" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 3.4 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST17: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST (LAS) - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST (LAS) - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (LAS)", salle: "à préciser" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "9h00-10h00", cours: "Réunion de Pré-Rentrée LAS Portail ST", salle: "AMPHI Sc. Naturelles" },
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "13h00-14h00", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "11h15-12h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST18: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST (LAS) - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST (LAS) - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (LAS)", salle: "à préciser" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "9h00-10h00", cours: "Réunion de Pré-Rentrée LAS Portail ST", salle: "AMPHI Sc. Naturelles" },
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "14h00-15h00", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "11h15-12h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST19: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST (LAS) - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST (LAS) - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (LAS)", salle: "à préciser" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "9h00-10h00", cours: "Réunion de Pré-Rentrée LAS Portail ST", salle: "AMPHI Sc. Naturelles" },
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "11h15-12h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "10h15-11h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST20: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST (LAS) - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST (LAS) - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (LAS)", salle: "à préciser" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "9h00-10h00", cours: "Réunion de Pré-Rentrée LAS Portail ST", salle: "AMPHI Sc. Naturelles" },
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "16h15-17h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "10h15-11h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 3.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sc. Naturelles" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeST21: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST (LAS) - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST (LAS) - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (LAS)", salle: "à préciser" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "9h00-10h00", cours: "Réunion de Pré-Rentrée LAS Portail ST", salle: "AMPHI Sc. Naturelles" },
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Physique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "16h15-17h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "10h15-12h15", cours: "Présentation Licence Mathématiques & MIASHS", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "AMPHI PV" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "11h15-12h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 3.4 (Bât M)" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeSV1: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "9h00-11h15", cours: "Réunion de Pré-Rentrée Portail SV", salle: "AMPHI PV" },
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail SV - OUI SI", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "9h00-11h15", cours: "Réunion de rentrée (Portail SV)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "10h15-12h15", cours: "Présentation Licence Sciences de la Vie", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
-        { time: "15h15-16h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "Présentation des métiers Sciences de la Vie", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
+        { time: "15h15-16h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "8h00-10h00", cours: "TP Biologie (BPL)", salle: "Salle 307 & 419 (Bât TP Sc. Naturelles)" },
+        { time: "10h15-12h15", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP Sc. Naturelles)" },
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "8h00-10h00", cours: "TP BPL", salle: "Salle 307 & 419 (Bât TP SC. Naturelles)" },
-        { time: "10h15-12h15", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP SC. Naturelles)" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
-        { time: "10h15-11h15", cours: "Présentation Licence Chimie pour SV", salle: "AMPHI Sc. Naturelles" },
-        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "AMPHI Sc. Naturelles" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
+        { time: "10h15-11h15", cours: "Présentation Chimie pour SV", salle: "Amphi Sc. Naturelles" },
+        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "Amphi Sc. Naturelles" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sc. Naturelles" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Préparations aux concours enseignements liés à la Biologie", salle: "AMPHI Sc. Naturelles" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
+        { time: "13h00-14h00", cours: "Préparation aux concours (CAPES SVT, Professorat des écoles)", salle: "à préciser" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeSV2: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "9h00-11h15", cours: "Réunion de Pré-Rentrée Portail SV", salle: "AMPHI PV" },
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail SV - OUI SI", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "9h00-11h15", cours: "Réunion de rentrée (Portail SV)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "10h15-12h15", cours: "Présentation Licence Sciences de la Vie", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
-        { time: "15h15-16h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "Présentation des métiers Sciences de la Vie", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.2 (Bât M)" },
+        { time: "15h15-16h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.2 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.2 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
-        { time: "10h15-11h15", cours: "Présentation Licence Chimie pour SV", salle: "AMPHI Sc. Naturelles" },
-        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "AMPHI Sc. Naturelles" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.2 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sc. Naturelles" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "8h00-10h00", cours: "TP BPL", salle: "Salle 309 & 419 (Bât TP SC. Naturelles)" },
-        { time: "10h15-12h15", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP SC. Naturelles)" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "8h00-10h00", cours: "TP Biologie (BPL)", salle: "Salle 309 & 419 (Bât TP Sc. Naturelles)" },
+        { time: "10h15-12h15", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP Sc. Naturelles)" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.2 (Bât M)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.2 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.2 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Préparations aux concours enseignements liés à la Biologie", salle: "AMPHI Sc. Naturelles" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.2 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeSV3: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "9h00-11h15", cours: "Réunion de Pré-Rentrée Portail SV", salle: "AMPHI PV" },
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail SV - OUI SI", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "9h00-11h15", cours: "Réunion de rentrée (Portail SV)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "10h15-12h15", cours: "Présentation Licence Sciences de la Vie", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
-        { time: "16h15-17h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "Présentation des métiers Sciences de la Vie", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
+        { time: "16h15-17h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "10h15-12h15", cours: "TP Biologie (BPL)", salle: "Salle 307 & 419 (Bât TP Sc. Naturelles)" },
+        { time: "13h00-15h00", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP Sc. Naturelles)" },
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "10h15-12h15", cours: "TP BPL", salle: "Salle 307 & 419 (Bât TP SC. Naturelles)" },
-        { time: "13h00-15h00", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP SC. Naturelles)" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
-        { time: "10h15-11h15", cours: "Présentation Licence Chimie pour SV", salle: "AMPHI Sc. Naturelles" },
-        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "AMPHI Sc. Naturelles" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Préparations aux concours enseignements liés à la Biologie", salle: "AMPHI Sc. Naturelles" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeSV4: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "9h00-11h15", cours: "Réunion de Pré-Rentrée Portail SV", salle: "AMPHI PV" },
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée DL BIO-GS", salle: "Salle M 1.5" },
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "9h00-11h15", cours: "Réunion de rentrée (Portail SV)", salle: "Amphi PV" },
+        { time: "11h15-12h15", cours: "Réunion DL", salle: "Salle M 1.5 (Bât M)" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "10h15-12h15", cours: "Présentation Licence Sciences de la Vie", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "Présentation des métiers Sciences de la Vie", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "11h15-12h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "11h15-12h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
-        { time: "10h15-11h15", cours: "Présentation Licence Chimie pour SV", salle: "AMPHI Sc. Naturelles" },
-        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "AMPHI Sc. Naturelles" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sc. Naturelles" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
-        { time: "10h15-12h15", cours: "TP BPL", salle: "Salle 309 & 419 (Bât TP SC. Naturelles)" },
-        { time: "13h00-15h00", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP SC. Naturelles)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
+        { time: "10h15-12h15", cours: "TP Biologie (BPL)", salle: "Salle 309 & 419 (Bât TP Sc. Naturelles)" },
+        { time: "13h00-15h00", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP Sc. Naturelles)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
-        { time: "13h00-15h00", cours: "Préparations aux concours enseignements liés à la Biologie", salle: "AMPHI Sc. Naturelles" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeSV5: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "9h00-11h15", cours: "Réunion de Pré-Rentrée Portail SV", salle: "AMPHI PV" },
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail SV - OUI SI", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "9h00-11h15", cours: "Réunion de rentrée (Portail SV)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "10h15-12h15", cours: "Présentation Licence Sciences de la Vie", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
-        { time: "16h15-17h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "Présentation des métiers Sciences de la Vie", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
+        { time: "16h15-17h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
-        { time: "10h15-11h15", cours: "Présentation Licence Chimie pour SV", salle: "AMPHI Sc. Naturelles" },
-        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "AMPHI Sc. Naturelles" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sc. Naturelles" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 3.3 (Bât M)" },
-        { time: "10h15-12h15", cours: "TP BPL", salle: "Salle 309 & 419 (Bât TP SC. Naturelles)" },
-        { time: "13h00-15h00", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP SC. Naturelles)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
+        { time: "10h15-12h15", cours: "TP Biologie (BPL)", salle: "Salle 309 & 419 (Bât TP Sc. Naturelles)" },
+        { time: "13h00-15h00", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP Sc. Naturelles)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
-        { time: "13h00-15h00", cours: "Préparations aux concours enseignements liés à la Biologie", salle: "AMPHI Sc. Naturelles" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeSV6: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "9h00-11h15", cours: "Réunion de Pré-Rentrée Portail SV", salle: "AMPHI PV" },
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail SV - OUI SI", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "9h00-11h15", cours: "Réunion de rentrée (Portail SV)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "10h15-12h15", cours: "Présentation Licence Sciences de la Vie", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "Présentation des métiers Sciences de la Vie", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
+        { time: "13h00-14h00", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
-        { time: "13h00-14h00", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
-        { time: "10h15-11h15", cours: "Présentation Licence Chimie pour SV", salle: "AMPHI Sc. Naturelles" },
-        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "AMPHI Sc. Naturelles" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
-        { time: "13h00-15h00", cours: "TP BPL", salle: "Salle 309 & 419 (Bât TP SC. Naturelles)" },
-        { time: "15h15-17h15", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP SC. Naturelles)" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
+        { time: "13h00-15h00", cours: "TP Biologie (BPL)", salle: "Salle 309 & 419 (Bât TP Sc. Naturelles)" },
+        { time: "15h15-17h15", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP Sc. Naturelles)" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Préparations aux concours enseignements liés à la Biologie", salle: "AMPHI Sc. Naturelles" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeSV7: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "9h00-11h15", cours: "Réunion de Pré-Rentrée Portail SV", salle: "AMPHI PV" },
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail SV - OUI SI", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "9h00-11h15", cours: "Réunion de rentrée (Portail SV)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "10h15-12h15", cours: "Présentation Licence Sciences de la Vie", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "Présentation des métiers Sciences de la Vie", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
+        { time: "13h00-14h00", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
-        { time: "13h00-14h00", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
-        { time: "10h15-11h15", cours: "Présentation Licence Chimie pour SV", salle: "AMPHI Sc. Naturelles" },
-        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "AMPHI Sc. Naturelles" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "8h00-10h00", cours: "TP BPL", salle: "Salle 309 & 419 (Bât TP SC. Naturelles)" },
-        { time: "10h15-12h15", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP SC. Naturelles)" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "8h00-10h00", cours: "TP Biologie (BPL)", salle: "Salle 309 & 419 (Bât TP Sc. Naturelles)" },
+        { time: "10h15-12h15", cours: "TP Miccroscopie salles 515 et 615", salle: "à préciser" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Préparations aux concours enseignements liés à la Biologie", salle: "AMPHI Sc. Naturelles" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeSV8: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "9h00-11h15", cours: "Réunion de Pré-Rentrée Portail SV", salle: "AMPHI PV" },
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée DL Chimie-SV", salle: "Salle M 1.1" },
-        { time: "13h00-14h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de A à L inclus", salle: "AMPHI PV" },
-        { time: "15h00-16h30", cours: "Réunion de Pré-Rentrée Portail ST - Noms de M à Z inclus", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "9h00-11h15", cours: "Réunion de rentrée (Portail SV)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "10h15-12h15", cours: "Présentation Licence Sciences de la Vie", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
-        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "AMPHI PV" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "Présentation des métiers Sciences de la Vie", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
+        { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi PV" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "11h15-12h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi PV" },
+        { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "11h15-12h15", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
-        { time: "15h15-17h15", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
+        { time: "15h15-16h15", cours: "Réunion de pré-rentrée DL", salle: "Salle M 1.1 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
-        { time: "10h15-11h15", cours: "Présentation Licence Chimie pour SV", salle: "AMPHI Sc. Naturelles" },
-        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "AMPHI Sc. Naturelles" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
-        { time: "10h15-12h15", cours: "TP BPL", salle: "Salle 309 & 419 (Bât TP SC. Naturelles)" },
-        { time: "13h00-15h00", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP SC. Naturelles)" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
+        { time: "10h15-12h15", cours: "TP Biologie (BPL)", salle: "Salle 309 & 419 (Bât TP Sc. Naturelles)" },
+        { time: "13h00-15h00", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP Sc. Naturelles)" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
         { time: "13h00-15h00", cours: "Projet Interface", salle: "Salle M 1.6 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeSV9: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "9h00-11h15", cours: "Réunion de Pré-Rentrée Portail SV", salle: "AMPHI PV" },
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail SV - OUI SI", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "9h00-11h15", cours: "Réunion de rentrée (Portail SV)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "10h15-12h15", cours: "Présentation Licence Sciences de la Vie", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "Présentation des métiers Sciences de la Vie", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
+        { time: "14h00-15h00", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
-        { time: "14h00-15h00", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
-        { time: "10h15-11h15", cours: "Présentation Licence Chimie pour SV", salle: "AMPHI Sc. Naturelles" },
-        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "AMPHI Sc. Naturelles" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "TP BPL", salle: "Salle 309 & 419 (Bât TP SC. Naturelles)" },
-        { time: "15h15-17h15", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP SC. Naturelles)" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
+        { time: "13h00-15h00", cours: "TP Biologie (BPL)", salle: "Salle 309 & 419 (Bât TP Sc. Naturelles)" },
+        { time: "15h15-17h15", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP Sc. Naturelles)" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
-        { time: "13h00-15h00", cours: "Préparations aux concours enseignements liés à la Biologie", salle: "AMPHI Sc. Naturelles" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeSV10: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "9h00-11h15", cours: "Réunion de Pré-Rentrée Portail SV", salle: "AMPHI PV" },
-        { time: "11h15-12h15", cours: "Réunion de Pré-Rentrée Portail SV - OUI SI", salle: "AMPHI PV" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "9h00-11h15", cours: "Réunion de rentrée (Portail SV)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "10h15-12h15", cours: "Présentation Licence Sciences de la Vie", salle: "AMPHI PV" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "Présentation des métiers Sciences de la Vie", salle: "Amphi PV" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
+      { day: "Mercredi", date: "2 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
+        { time: "14h00-15h00", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Jeudi", date: "4 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
-        { time: "14h00-15h00", cours: "Ateliers de rentrée - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
-        { time: "10h15-11h15", cours: "Présentation Licence Chimie pour SV", salle: "AMPHI Sc. Naturelles" },
-        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "AMPHI Sc. Naturelles" },
-        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
       ]},
-      { day: "Mardi", date: "9 septembre", events: [
-        { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
+      { day: "Mardi", date: "8 septembre", events: [
+        { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
       ]},
-      { day: "Mercredi", date: "10 septembre", events: [
-        { time: "8h00-10h00", cours: "TP BPL", salle: "Salle 309 & 419 (Bât TP SC. Naturelles)" },
-        { time: "10h15-12h15", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP SC. Naturelles)" },
-        { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
+      { day: "Mercredi", date: "9 septembre", events: [
+        { time: "8h00-10h00", cours: "TP Biologie (BPL)", salle: "Salle 309 & 419 (Bât TP Sc. Naturelles)" },
+        { time: "10h15-12h15", cours: "TP Microscopie", salle: "Salle 515 & 615 (Bât TP Sc. Naturelles)" },
+        { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
       ]},
-      { day: "Jeudi", date: "11 septembre", events: [
-        { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
-        { time: "13h00-15h00", cours: "Préparations aux concours enseignements liés à la Biologie", salle: "AMPHI Sc. Naturelles" },
+      { day: "Jeudi", date: "10 septembre", events: [
+        { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
       ]},
-      { day: "Vendredi", date: "12 septembre", events: [
-        { time: "(HORAIRE SUR MOODLE)", cours: "ÉVALUATION Math0", salle: "AMPHI PV" },
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
     groupeSVLAS: [
-      { day: "Lundi", date: "1er septembre", events: [
-        { time: "9h00-11h15", cours: "Réunion de Pré-Rentrée Portail SV", salle: "AMPHI PV" },
-        { time: "13h00-14h00", cours: "Réunion de Pré-Rentrée Portail SV - LAS", salle: "AMPHI Sc. Naturelles" },
+      { day: "Lundi", date: "31 août", events: [
+        { time: "9h00-11h15", cours: "Réunion de rentrée (Portail SV)", salle: "Amphi PV" },
+        { time: "13h00-14h00", cours: "Réunion de pré-rentrée (LAS-SV)", salle: "Amphi Sc. Naturelles" },
       ]},
-      { day: "Mardi", date: "2 septembre", events: [
-        { time: "10h15-12h15", cours: "Présentation Licence Sciences de la Vie", salle: "AMPHI PV" },
-        { time: "13h00-14h00", cours: "Ateliers de rentrée - Noms de A à L inclus - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
-        { time: "14h00-15h00", cours: "Ateliers de rentrée - Noms de M à Z inclus - OBLIGATOIRE", salle: "Salle Coworking (Bât M)" },
+      { day: "Mardi", date: "1er septembre", events: [
+        { time: "10h15-12h15", cours: "Présentation des métiers Sciences de la Vie", salle: "Amphi PV" },
+        { time: "13h00-14h00", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
       ]},
-      { day: "Mercredi", date: "3 septembre", events: [
-        { time: "9h30-13h30", cours: "FORUM D'ACCUEIL - Nouveaux entrants", salle: "Bibliothèque" },
+      { day: "Jeudi", date: "3 septembre", events: [
+        { time: "9h00-13h00", cours: "Forum d'accueil des nouveaux entrants", salle: "BU et Parvis BU" },
       ]},
-      { day: "Vendredi", date: "5 septembre", events: [
-        { time: "10h15-11h15", cours: "Présentation Licence Chimie pour SV", salle: "AMPHI Sc. Naturelles" },
-        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "AMPHI Sc. Naturelles" },
+      { day: "Vendredi", date: "4 septembre", events: [
+        { time: "10h15-11h15", cours: "Présentation Chimie pour SV", salle: "Amphi Sc. Naturelles" },
+        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "Amphi Sc. Naturelles" },
       ]},
-      { day: "Lundi", date: "8 septembre", events: [
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "AMPHI PV" },
+      { day: "Lundi", date: "7 septembre", events: [
+        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi PV" },
+      ]},
+      { day: "Vendredi", date: "11 septembre", events: [
+        { time: "Selon groupe", cours: "Évaluation Maths0", salle: "Amphi PV" },
       ]},
     ],
   };
@@ -1415,7 +1343,7 @@
 
   function decoupeHoraire(t) {
     var m = t.match(/(\d{1,2})h(\d{2})/g);
-    if (!m) return { moodle: true };
+    if (!m) return { moodle: true, raw: t };
     function pad(s) { var p = s.match(/(\d{1,2})h(\d{2})/); return (p[1].length < 2 ? "0" : "") + p[1] + "h" + p[2]; }
     return { start: pad(m[0]), end: m[1] ? pad(m[1]) : "" };
   }
@@ -1561,11 +1489,12 @@
     var html = "", prev = null;
     jours.forEach(function (j, i) {
       var num = parseInt(numJour(j.date), 10);
-      if (prev !== null && prev <= 5 && num >= 8) html += '<div class="edt-gap" aria-hidden="true"></div>';
+      var wk = (j.date.indexOf("août") !== -1) ? 1 : (num >= 7 ? 2 : 1);
+      if (prev !== null && prev === 1 && wk === 2) html += '<div class="edt-gap" aria-hidden="true"></div>';
       html += '<button type="button" class="edt-chip" role="tab" data-i="' + i + '" aria-selected="false">' +
                 '<span class="edt-chip-day">' + jourCourt(j.day) + "</span>" +
                 '<span class="edt-chip-num">' + num + "</span></button>";
-      prev = num;
+      prev = wk;
     });
     ribbonEl.innerHTML = html;
     var chips = ribbonEl.querySelectorAll(".edt-chip");
@@ -1598,7 +1527,7 @@
     var soft = hexA(ty.color, 0.12);
     var h = decoupeHoraire(e.time);
     var tHtml = h.moodle
-      ? '<span class="edt-time-moodle">Voir<br>Moodle</span>'
+      ? '<span class="edt-time-moodle">' + h.raw + '</span>'
       : '<span class="edt-time-start">' + h.start + "</span>" + (h.end ? '<span class="edt-time-end">' + h.end + "</span>" : "");
     var bg = ty.label === "Évaluation" ? "background:" + hexA(ty.color, 0.06) + ";" : "";
     return '<article class="edt-card" style="--c:' + ty.color + ";--c-soft:" + soft + ";" + bg + '">' +
