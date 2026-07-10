@@ -4,7 +4,7 @@
    Fichier autonome (GitHub Pages). Côté KSUP : un conteneur + ce script.
 
        <div id="edt-portail-st"></div>
-       <script src="https://portailst.github.io/EDT26-27/edt.js?v=13"></script>
+       <script src="https://portailst.github.io/EDT26-27/edt.js?v=14"></script>
 
    Données structurées { time, cours, salle }, triées par horaire à
    l'affichage. Tout le visuel (styles, interface) est généré ici.
@@ -23,7 +23,8 @@
   // --- Types de séance : couleur d'accent + libellé court (badge) ----------
   // Le PREMIER mot-clé trouvé dans l'intitulé gagne (du + spécifique au + générique).
   var TYPES = [
-    { kw: "Réunion de Pré-Rentrée Portail SV", color: "#00887A", label: "Réunion" },
+    { kw: "(Portail SV)",                     color: "#00887A", label: "Réunion SV" },
+    { kw: "(LAS SV)",                         color: "#00887A", label: "Réunion SV" },
     { kw: "Préparations aux concours",         color: "#B06AE0", label: "Prépa concours" },
     { kw: "Projet Interface",                  color: "#00A7C4", label: "Projet" },
     { kw: "Amphi Méthodologie",                color: "#93329E", label: "Méthodologie" },
@@ -69,6 +70,7 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
@@ -111,6 +113,7 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.2 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.2 (Bât M)" },
@@ -153,6 +156,7 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.3 (Bât M)" },
@@ -195,6 +199,7 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
@@ -237,6 +242,7 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
@@ -279,6 +285,7 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
@@ -310,6 +317,7 @@
       ]},
       { day: "Mercredi", date: "2 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
@@ -320,6 +328,7 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
@@ -351,6 +360,7 @@
       ]},
       { day: "Mercredi", date: "2 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
@@ -361,6 +371,7 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
@@ -393,6 +404,7 @@
       ]},
       { day: "Mercredi", date: "2 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
@@ -402,6 +414,7 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.4 (Bât M)" },
@@ -434,6 +447,7 @@
       ]},
       { day: "Mercredi", date: "2 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
@@ -443,6 +457,7 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.5 (Bât M)" },
@@ -475,6 +490,7 @@
       ]},
       { day: "Mercredi", date: "2 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.1 (Bât M)" },
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
@@ -484,6 +500,7 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 3.1 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.1 (Bât M)" },
@@ -506,6 +523,8 @@
     groupeST12: [
       { day: "Lundi", date: "31 août", events: [
         { time: "11h15-12h15", cours: "Réunion DL", salle: "Salle Math 2.2 (Bât M)" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mardi", date: "1er septembre", events: [
         { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 3.2 (Bât M)" },
@@ -514,6 +533,7 @@
       ]},
       { day: "Mercredi", date: "2 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.2 (Bât M)" },
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
@@ -524,6 +544,7 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.2 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 3.2 (Bât M)" },
@@ -566,6 +587,7 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 3.3 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.3 (Bât M)" },
@@ -598,6 +620,7 @@
       ]},
       { day: "Mercredi", date: "2 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 3.4 (Bât M)" },
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "15h15-17h15", cours: "Présentation Licence Électronique-IA", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
@@ -607,6 +630,7 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 3.4 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 3.4 (Bât M)" },
@@ -671,6 +695,8 @@
       { day: "Lundi", date: "31 août", events: [
         { time: "9h00-11h15", cours: "Réunion de rentrée (Portail SV)", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "11h15-12h15", cours: "Réunion DL", salle: "Amphi Sciences Naturelles (Bât R)" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mardi", date: "1er septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
@@ -679,6 +705,7 @@
         { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "2 septembre", events: [
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 1.1 (Bât M)" },
       ]},
@@ -711,7 +738,7 @@
     ],
     groupeST17: [
       { day: "Lundi", date: "31 août", events: [
-        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (LAS)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (LAS SITE)", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
@@ -751,7 +778,7 @@
     ],
     groupeST18: [
       { day: "Lundi", date: "31 août", events: [
-        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (LAS)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (LAS SITE)", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
@@ -761,6 +788,8 @@
         { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "2 septembre", events: [
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
       ]},
       { day: "Jeudi", date: "3 septembre", events: [
@@ -789,7 +818,7 @@
     ],
     groupeST19: [
       { day: "Lundi", date: "31 août", events: [
-        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (LAS)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (LAS SITE)", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
@@ -799,6 +828,8 @@
         { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "2 septembre", events: [
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 1.5 (Bât M)" },
       ]},
       { day: "Jeudi", date: "3 septembre", events: [
@@ -827,7 +858,7 @@
     ],
     groupeST20: [
       { day: "Lundi", date: "31 août", events: [
-        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (LAS)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (LAS SITE)", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
@@ -837,6 +868,8 @@
         { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "2 septembre", events: [
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 2.1 (Bât M)" },
       ]},
       { day: "Jeudi", date: "3 septembre", events: [
@@ -866,7 +899,7 @@
     ],
     groupeST21: [
       { day: "Lundi", date: "31 août", events: [
-        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (LAS)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "11h15-12h15", cours: "Réunion de pré-rentrée (LAS SITE)", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
@@ -876,6 +909,8 @@
         { time: "15h15-17h15", cours: "Présentation Licence Chimie", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "2 septembre", events: [
+        { time: "10h15-12h15", cours: "Présentation des métiers Maths / MIASHS", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
       ]},
       { day: "Jeudi", date: "3 septembre", events: [
@@ -885,6 +920,7 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "13h00-15h00", cours: "TD Maths0", salle: "Salle M 2.2 (Bât M)" },
@@ -1025,6 +1061,8 @@
       { day: "Lundi", date: "31 août", events: [
         { time: "9h00-11h15", cours: "Réunion de rentrée (Portail SV)", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "11h15-12h15", cours: "Réunion DL", salle: "Salle Math 2.3 (Bât M)" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mardi", date: "1er septembre", events: [
         { time: "10h15-12h15", cours: "Présentation des métiers Sciences de la Vie", salle: "Amphi Petit Valrose (Petit Valrose)" },
@@ -1033,6 +1071,7 @@
       ]},
       { day: "Mercredi", date: "2 septembre", events: [
         { time: "11h15-12h15", cours: "Atelier de rentrée (obligatoire)", salle: "Bât Math (salle affichée sur place)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Informatique", salle: "Amphi Petit Valrose (Petit Valrose)" },
         { time: "15h15-17h15", cours: "TD Maths0", salle: "Salle M 1.4 (Bât M)" },
       ]},
       { day: "Jeudi", date: "3 septembre", events: [
@@ -1180,6 +1219,8 @@
     groupeSV8: [
       { day: "Lundi", date: "31 août", events: [
         { time: "9h00-11h15", cours: "Réunion de rentrée (Portail SV)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Réunion de rentrée : noms A à L", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "15h15-17h15", cours: "Réunion de rentrée : noms M à Z", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mardi", date: "1er septembre", events: [
         { time: "10h15-12h15", cours: "Présentation des métiers Sciences de la Vie", salle: "Amphi Petit Valrose (Petit Valrose)" },
@@ -1198,6 +1239,7 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "8h00-10h00", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "10h15-12h15", cours: "TD Maths0", salle: "Salle M 2.3 (Bât M)" },
@@ -1298,7 +1340,7 @@
     groupeSVLAS: [
       { day: "Lundi", date: "31 août", events: [
         { time: "9h00-11h15", cours: "Réunion de rentrée (Portail SV)", salle: "Amphi Petit Valrose (Petit Valrose)" },
-        { time: "13h00-14h00", cours: "Réunion de pré-rentrée (LAS-SV)", salle: "Amphi Sciences Naturelles (Bât R)" },
+        { time: "13h00-14h00", cours: "Réunion de pré-rentrée (LAS SV)", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Mardi", date: "1er septembre", events: [
         { time: "10h15-12h15", cours: "Présentation des métiers Sciences de la Vie", salle: "Amphi Petit Valrose (Petit Valrose)" },
