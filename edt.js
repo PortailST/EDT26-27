@@ -4,7 +4,7 @@
    Fichier autonome (GitHub Pages). Côté KSUP : un conteneur + ce script.
 
        <div id="edt-portail-st"></div>
-       <script src="https://portailst.github.io/EDT26-27/edt.js?v=17"></script>
+       <script src="https://portailst.github.io/EDT26-27/edt.js?v=18"></script>
 
    Données structurées { time, cours, salle }, triées par horaire à
    l'affichage. Tout le visuel (styles, interface) est généré ici.
@@ -32,11 +32,11 @@
     { kw: "TP Microscopie",                    color: "#8B572A", label: "TP" },
     { kw: "Réunion",                           color: "#0095C8", label: "Réunion" },
     { kw: "TD",                                color: "#007BA3", label: "TD" },
-    { kw: "FORUM",                             color: "#00A888", label: "Forum" },
+    { kw: "Forum",                             color: "#00A888", label: "Forum" },
     { kw: "Atelier",                           color: "#E0148C", label: "Atelier" },
     { kw: "Présentation",                      color: "#7C6BF0", label: "Présentation" },
     { kw: "Innovation",                        color: "#EF8A3A", label: "Innovation" },
-    { kw: "ÉVALUATION",                        color: "#E0312B", label: "Évaluation" }
+    { kw: "Évaluation",                        color: "#E0312B", label: "Évaluation" }
   ];
   var TYPE_DEFAUT = { color: "#5C7682", label: "Séance" };
 
@@ -74,7 +74,7 @@
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
@@ -86,7 +86,7 @@
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST2: [
@@ -117,7 +117,7 @@
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
@@ -129,7 +129,7 @@
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST3: [
@@ -160,7 +160,7 @@
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
@@ -172,7 +172,7 @@
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST4: [
@@ -206,7 +206,7 @@
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "9 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
@@ -215,7 +215,7 @@
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST5: [
@@ -249,7 +249,7 @@
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "9 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
@@ -258,7 +258,7 @@
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST6: [
@@ -289,7 +289,7 @@
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
@@ -301,7 +301,7 @@
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST7: [
@@ -335,7 +335,7 @@
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "9 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
@@ -344,7 +344,7 @@
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST8: [
@@ -378,7 +378,7 @@
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "9 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
@@ -387,7 +387,7 @@
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST9: [
@@ -421,7 +421,7 @@
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "9 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
@@ -430,7 +430,7 @@
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST10: [
@@ -464,7 +464,7 @@
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "9 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
@@ -473,7 +473,7 @@
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST11: [
@@ -507,7 +507,7 @@
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 3.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "9 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 3.1 (Bât M)" },
@@ -517,7 +517,7 @@
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
         { time: "8h00-17h15", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST12: [
@@ -548,7 +548,7 @@
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
@@ -560,7 +560,7 @@
         { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST13: [
@@ -594,7 +594,7 @@
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 3.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "9 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
@@ -603,7 +603,7 @@
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 3.2 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST14: [
@@ -637,7 +637,7 @@
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 3.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "9 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
@@ -646,7 +646,7 @@
         { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST15: [
@@ -679,7 +679,7 @@
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 3.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "9 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 3.2 (Bât M)" },
@@ -688,7 +688,7 @@
         { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST16: [
@@ -724,7 +724,7 @@
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 3.4 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "9 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
@@ -733,7 +733,7 @@
         { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST17: [
@@ -773,7 +773,7 @@
         { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST18: [
@@ -813,7 +813,7 @@
         { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST19: [
@@ -853,7 +853,7 @@
         { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST20: [
@@ -894,7 +894,7 @@
         { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeST21: [
@@ -935,7 +935,7 @@
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 3.2 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeSV1: [
@@ -964,7 +964,7 @@
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.1 (Bât M)" },
@@ -977,7 +977,7 @@
         { time: "12h30-13h30", cours: "Filière Enseignements liés à la Biologie", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeSV2: [
@@ -1007,7 +1007,7 @@
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "9 septembre", events: [
         { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
@@ -1016,7 +1016,7 @@
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeSV3: [
@@ -1045,7 +1045,7 @@
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "9 septembre", events: [
         { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
@@ -1054,7 +1054,7 @@
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeSV4: [
@@ -1084,7 +1084,7 @@
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
@@ -1098,7 +1098,7 @@
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeSV5: [
@@ -1128,7 +1128,7 @@
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "9 septembre", events: [
         { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
@@ -1137,7 +1137,7 @@
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeSV6: [
@@ -1166,7 +1166,7 @@
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mercredi", date: "9 septembre", events: [
         { time: "13h00-15h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
@@ -1175,7 +1175,7 @@
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeSV7: [
@@ -1199,7 +1199,7 @@
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "8h00-10h00", cours: "TP Biologie (BPL)", salle: "Salle 309 & 419 (Bât TP Sc. Naturelles)" },
@@ -1213,7 +1213,7 @@
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeSV8: [
@@ -1243,7 +1243,7 @@
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
@@ -1258,7 +1258,7 @@
         { time: "13h00-15h00", cours: "Projet Interface", salle: "Salle M 1.6 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeSV9: [
@@ -1282,7 +1282,7 @@
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
@@ -1296,7 +1296,7 @@
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeSV10: [
@@ -1320,7 +1320,7 @@
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Mardi", date: "8 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
@@ -1334,7 +1334,7 @@
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
     groupeSVLAS: [
@@ -1354,13 +1354,14 @@
         { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
-        { time: "13h00-15h00", cours: "Innovation (Fablab & Invent)", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "13h00-15h00", cours: "Présentation FabLab", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
-        { time: "Selon groupe", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
+        { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
       ]},
     ],
   };
+
 
 
 
@@ -1452,7 +1453,7 @@
       P + " .edt-time{flex:0 0 56px;display:flex;flex-direction:column;align-items:flex-start;padding-top:1px;}" +
       P + " .edt-time-start{font-size:16px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--ink);}" +
       P + " .edt-time-end{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--muted);}" +
-      P + " .edt-time-moodle{font-size:11px;font-weight:800;color:var(--c);text-transform:uppercase;letter-spacing:.04em;line-height:1.3;}" +
+      P + " .edt-time-moodle{font-size:13px;font-weight:800;color:var(--c);text-transform:none;letter-spacing:.01em;line-height:1.25;}" +
       P + " .edt-info{flex:1 1 auto;min-width:0;}" +
       P + " .edt-tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--c);background:var(--c-soft);padding:3px 9px;border-radius:999px;margin:0 0 8px;}" +
       P + " .edt-course{display:block;font-size:16px;font-weight:700;line-height:1.3;margin:0 0 6px;color:var(--ink);overflow-wrap:anywhere;}" +
@@ -1479,7 +1480,16 @@
     root.setAttribute("data-edt-ready", "1");
 
     var css = construireCSS();
-    var options = Object.keys(DATA).map(function (k) {
+    var portail = (root.getAttribute("data-portail") || "").toLowerCase();
+    var keys = Object.keys(DATA);
+    if (portail === "sv") {
+      keys = keys.filter(function (k) { return k.indexOf("SV") !== -1; })
+             .concat(keys.filter(function (k) { return k.indexOf("SV") === -1; }));
+    } else if (portail === "st") {
+      keys = keys.filter(function (k) { return k.indexOf("SV") === -1; })
+             .concat(keys.filter(function (k) { return k.indexOf("SV") !== -1; }));
+    }
+    var options = keys.map(function (k) {
       return '<option value="' + k + '">' + libelle(k) + "</option>";
     }).join("");
 
