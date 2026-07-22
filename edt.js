@@ -4,7 +4,7 @@
    Fichier autonome (GitHub Pages). Côté KSUP : un conteneur + ce script.
 
        <div id="edt-portail-st"></div>
-       <script src="https://portailst.github.io/EDT26-27/edt.js?v=18"></script>
+       <script src="https://portailst.github.io/EDT26-27/edt.js?v=19"></script>
 
    Données structurées { time, cours, salle }, triées par horaire à
    l'affichage. Tout le visuel (styles, interface) est généré ici.
@@ -998,6 +998,8 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
+        { time: "10h15-11h15", cours: "Présentation Chimie pour SV", salle: "Amphi Sciences Naturelles (Bât R)" },
+        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "Amphi Sciences Naturelles (Bât R)" },
         { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
@@ -1014,6 +1016,7 @@
       ]},
       { day: "Jeudi", date: "10 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
+        { time: "12h30-13h30", cours: "Filière Enseignements liés à la Biologie", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
         { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
@@ -1039,6 +1042,9 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
+        { time: "10h15-11h15", cours: "Présentation Chimie pour SV", salle: "Amphi Sciences Naturelles (Bât R)" },
+        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "Amphi Sciences Naturelles (Bât R)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.2 (Bât M)" },
@@ -1052,6 +1058,7 @@
       ]},
       { day: "Jeudi", date: "10 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.3 (Bât M)" },
+        { time: "12h30-13h30", cours: "Filière Enseignements liés à la Biologie", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
         { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
@@ -1080,6 +1087,7 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
+        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "Amphi Sciences Naturelles (Bât R)" },
         { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
@@ -1096,6 +1104,7 @@
       ]},
       { day: "Jeudi", date: "10 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
+        { time: "12h30-13h30", cours: "Filière Enseignements liés à la Biologie", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
         { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
@@ -1119,6 +1128,8 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
+        { time: "10h15-11h15", cours: "Présentation Chimie pour SV", salle: "Amphi Sciences Naturelles (Bât R)" },
+        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "Amphi Sciences Naturelles (Bât R)" },
         { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
@@ -1135,6 +1146,7 @@
       ]},
       { day: "Jeudi", date: "10 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
+        { time: "12h30-13h30", cours: "Filière Enseignements liés à la Biologie", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
         { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
@@ -1158,6 +1170,9 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
+        { time: "10h15-11h15", cours: "Présentation Chimie pour SV", salle: "Amphi Sciences Naturelles (Bât R)" },
+        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "Amphi Sciences Naturelles (Bât R)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.4 (Bât M)" },
@@ -1173,6 +1188,7 @@
       ]},
       { day: "Jeudi", date: "10 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.1 (Bât M)" },
+        { time: "12h30-13h30", cours: "Filière Enseignements liés à la Biologie", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
         { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
@@ -1196,6 +1212,9 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
+        { time: "10h15-11h15", cours: "Présentation Chimie pour SV", salle: "Amphi Sciences Naturelles (Bât R)" },
+        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "Amphi Sciences Naturelles (Bât R)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 1.5 (Bât M)" },
@@ -1211,6 +1230,7 @@
       ]},
       { day: "Jeudi", date: "10 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
+        { time: "12h30-13h30", cours: "Filière Enseignements liés à la Biologie", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
         { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
@@ -1239,6 +1259,7 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
+        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "Amphi Sciences Naturelles (Bât R)" },
         { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
@@ -1279,6 +1300,9 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
+        { time: "10h15-11h15", cours: "Présentation Chimie pour SV", salle: "Amphi Sciences Naturelles (Bât R)" },
+        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "Amphi Sciences Naturelles (Bât R)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.2 (Bât M)" },
@@ -1294,6 +1318,7 @@
       ]},
       { day: "Jeudi", date: "10 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.4 (Bât M)" },
+        { time: "12h30-13h30", cours: "Filière Enseignements liés à la Biologie", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
         { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
@@ -1317,6 +1342,9 @@
       ]},
       { day: "Vendredi", date: "4 septembre", events: [
         { time: "8h00-10h00", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
+        { time: "10h15-11h15", cours: "Présentation Chimie pour SV", salle: "Amphi Sciences Naturelles (Bât R)" },
+        { time: "11h15-12h15", cours: "Amphi Méthodologie (SV)", salle: "Amphi Sciences Naturelles (Bât R)" },
+        { time: "13h00-15h00", cours: "Présentation Licence Sciences de la Terre", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Lundi", date: "7 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.3 (Bât M)" },
@@ -1332,6 +1360,7 @@
       ]},
       { day: "Jeudi", date: "10 septembre", events: [
         { time: "10h15-12h15", cours: "TD Math0", salle: "Salle M 2.5 (Bât M)" },
+        { time: "12h30-13h30", cours: "Filière Enseignements liés à la Biologie", salle: "Amphi Sciences Naturelles (Bât R)" },
       ]},
       { day: "Vendredi", date: "11 septembre", events: [
         { time: "Selon groupe sur Moodle", cours: "Évaluation Math0", salle: "Amphi Petit Valrose (Petit Valrose)" },
@@ -1361,6 +1390,7 @@
       ]},
     ],
   };
+
 
 
 
